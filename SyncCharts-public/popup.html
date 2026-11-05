@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SyncCharts</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">S</div>
+      <div class="brand-copy">
+        <h1>SyncCharts</h1>
+        <p>Crosshair synchronization</p>
+      </div>
+      <span class="version">0.2.11</span>
+    </header>
+
+    <section class="overview" aria-label="Synchronization mode">
+      <div class="overview-icon" aria-hidden="true">↔</div>
+      <div>
+        <p class="eyebrow">SYNC MODE</p>
+        <h2>Automatic</h2>
+        <p class="muted">Charts match candles by timestamp.</p>
+      </div>
+      <span class="live-indicator" title="Automatic synchronization is enabled"></span>
+    </section>
+
+    <section class="panel settings">
+      <div class="section-heading">
+        <h2>Time label</h2>
+        <span class="section-note">DISPLAY</span>
+      </div>
+      <label for="timeFormat">Time format</label>
+      <select id="timeFormat">
+        <option value="12">12-hour · AM / PM</option>
+        <option value="24">24-hour</option>
+      </select>
+      <p class="help">Follows the timezone selected in each TradingView chart.</p>
+    </section>
+
+    <section class="panel tabs-panel">
+      <div class="section-heading">
+        <h2>TradingView tabs</h2>
+        <button id="check" class="text-button" type="button">Refresh</button>
+      </div>
+      <p id="summary" class="summary" aria-live="polite">Checking open tabs…</p>
+      <div id="results" class="results"></div>
+    </section>
+
+    <div class="note">
+      <span class="note-mark" aria-hidden="true">i</span>
+      <p>Open both charts and hover over either one. The other chart follows the same candle time and relative price level.</p>
+    </div>
+
+    <footer>
+      <span>LOCAL · NO CLOUD SERVER</span>
+      <span>EXPERIMENTAL</span>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
